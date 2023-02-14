@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+## Django:
 from django.contrib import admin
 from django.urls import path
 
@@ -20,11 +21,26 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-# Use include() to add paths from the landing application
+# Use static() to add URL mapping to serve static files during development (only)
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+## MacroSheds:
+# Use include() to add paths from the applications
 from django.urls import include
 
 urlpatterns += [
+    # landing application (home)
     path('landing/', include('landing.urls')),
+    # viz app (link out to ms shiny site, as of 2023-02-14)
+    path('viz/', include('viz.urls')),
+    # download app (link to EDI, as of 2023-02-14)
+    path('download/', include('download.urls')),
+    path('upload/', include('upload.urls')),
+    path('user/', include('user.urls')),
+
 ]
 
 #Add URL maps to redirect the base URL to our application
@@ -32,9 +48,3 @@ from django.views.generic import RedirectView
 urlpatterns += [
     path('', RedirectView.as_view(url='landing/', permanent=True)),
 ]
-
-# Use static() to add URL mapping to serve static files during development (only)
-from django.conf import settings
-from django.conf.urls.static import static
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
