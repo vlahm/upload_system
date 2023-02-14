@@ -57,6 +57,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'upload_system.urls'
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
