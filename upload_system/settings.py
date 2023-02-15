@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # macrosheds applications
-    'landing.apps.LandingConfig', # This object was created for us in /landing/apps.py
-    'download.apps.DownloadConfig', # This object was created for us in /landing/apps.py
+    'landing.apps.LandingConfig',
+    'download.apps.DownloadConfig',
+    'upload.apps.UploadConfig',
+    'user.apps.UserConfig',
+    'viz.apps.VizConfig',
 ]
 
 MIDDLEWARE = [
