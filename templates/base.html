@@ -1,9 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Project</title>
+  <title>stream.macrosheds</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- macorsheds -->
+  <link rel="stylesheet" type='text/css' href="{% static 'css/stylesheet.css' %}">
 </head>
 <body>
-{% block content %}{% endblock %}
+  <!-- stream.macrosheds navigation bar -->
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="https://www.macrosheds.org"><img src="{% static 'img/mslogo.png' %}" alt="macrosheds logo " class = "mslogo"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="{% url 'landing' %}">home</a></li>
+      <!-- <li><a href="{% url 'user' %}">user</a></li> -->
+      <li><a href="{% url 'download' %}">download</a></li>
+      <li><a href="{% url 'upload' %}">upload</a></li>
+      <li><a href="{% url 'viz' %}">viz</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'user' %}"><span class="glyphicon glyphicon-user"></span>user</a></li>
+      <!-- <li><a href="https://www.macrosheds.org"><img src="{% static 'img/mslogo.png' %}" alt="macrosheds logo " class = "mslogo"></a></li> -->
+    </ul>
+  </div>
+  </nav>
+  <!--/ stream.macrosheds navigation bar -->
+
+  <div class = "container">
+      <div class = "jumbotron">
+      {% block content %}{% endblock %}
+      </div>
+  </div>
 </body>
 </html>
