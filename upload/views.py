@@ -1,11 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
-# def upload(request):
-#     return HttpResponse("Hello, world. You're at MacroSheds: upload.")
-
-# Create your views here.
 def upload(request):
     """View function for home page of site."""
     context = {

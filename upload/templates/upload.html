@@ -1,4 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-     <h1> you are in: upload.html </h1>
+<h1> upload your data to MacroSheds </h1>
+<br>
+<div class="panel-group">
+  <div class="panel panel-primary">
+    <!-- <div class="panel-heading"></div> -->
+    <div class="panel-body">
+       <p>have you created an account with stream.macrosheds? this is a crucial step to remember your work, and to help keep important metadata including data source accredidation</p>
+       <p> if you have not yet created an account, please visit the <a href="{% url 'user' %}">user</a> portion of our site<p>
+    </div>
+  </div>
+</div>
+
+<div class="panel-group">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <p> if you are ready to upload, continue here -- note that this process may take some time and involves multiple steps for each data product you seek to upload and/or recieve </p>
+    </div>
+
+    <div class="panel-body">
+      <button type="button" class="btn btn-success btn-lg">upload</button>
+    </div>
+  </div>
+</div>
 {% endblock %}
