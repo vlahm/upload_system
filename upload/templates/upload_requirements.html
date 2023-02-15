@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> does your data meet the minimum requirements for MacroSheds?</h1>
+<br>
+
+<div class="panel-group">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      if your dataset does not exceed the below requirements, then it is not eligible for inclusion in MacroSheds.
+    </div>
+
+    <div class="panel-body">
+      However, it is possible that with some help your data can still be made eligible. If you are interested, consult our <a>troubleshooting options</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>MacroSheds Minimum Domain Data Requirements</h2>
+  <p>does your dataset have at least</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>data product</th>
+        <th>amount</th>
+        <th>frequency</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>stream site</td>
+        <td>1</td>
+        <td>consistent location</td>
+      </tr>
+      <tr>
+        <td>stream chemistry</td>
+        <td>1 month</td>
+        <td>every two weeks</td>
+      </tr>
+      <tr>
+        <td>stream discharge</td>
+        <td>1 month</td>
+        <td>every two weeks</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel-group">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <p>if you answer 'yes' to each of the above, continue</p>
+    </div>
+
+    <div class="panel-body">
+      <button type="button" class="btn btn-success btn-lg" ><a href="{% url 'upload_plan' %}">continue</a></button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,10 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
-# def viz(request):
-#     return HttpResponse("Hello, world. You're at MacroSheds: viz.")
-
 # Create your views here.
 def viz(request):
     """View function for home page of site."""
