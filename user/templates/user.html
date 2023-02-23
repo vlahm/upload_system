@@ -1,4 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-     <h1> you are in: user.html </h1>
+
+{% if user.is_authenticated %}
+    <strong>username:</strong> {{ user.username }}<br>
+    <strong>email:</strong> {{ user.email }}<br>
+    <strong>sites managed:</strong> <br>
+    <strong>datasets uploaded:</strong> <br>
+    <br>
+    <a href="{% url 'logout' %}">Log out</a>
+{% else %}
+    Please 
+    <a href="{% url 'register' %}">Register</a> or 
+    <a href="{% url 'login' %}">Log in</a>
+{% endif %}
+
 {% endblock %}

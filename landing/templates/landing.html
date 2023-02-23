@@ -1,12 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 <h1> stream.macrosheds </h1>
+
+{% if user.is_authenticated %}
+    <div class="alert alert-success" role="alert">
+        <h3>Welcome {{ user.username }}!</h3>
+        <a href="{% url 'logout' %}">Log out?</a>
+    </div>
+{% else %}
+    <div class="alert alert-success" role="alert">
+        <h3>Welcome!</h3>
+        <a href="{% url 'register' %}">Sign up</a> ~ 
+        <a href="{% url 'login' %}">Log in</a>
+    </div>
+{% endif %}
+
 <br>
 <div class="panel-group">
   <div class="panel panel-primary">
     <!-- <div class="panel-heading">what is stream.macrosheds?</div> -->
     <div class="panel-body">
-       <p> <strong>stream.macrosheds</strong> is an online portal where stream and river water chemistry data can be uploaded to the macrosheds dataset</p>
+       <p> <strong>stream.macrosheds</strong> is an online portal where streamflow and water chemistry data can be uploaded to the MacroSheds dataset.</p>
     </div>
   </div>
 </div>
