@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from upload.forms import ProductForm
 
 # original "upload" landing page
 def upload(request):
@@ -27,3 +28,21 @@ def upload_plan(request):
     }
     # Render the HTML template upload.html with the data in the context variable
     return render(request, 'upload_plan.html', context=context)
+
+# second step - what products do you plan to upload?
+def upload_product(request):
+    """view"""
+    context = {}
+
+    # create object of form
+    form = ProductForm(request.POST or None)
+
+    # check if form data is valid
+    if form.is_valid():
+        # save the form data to model
+        form.save()
+
+    context['form'] = form
+
+    # Render the HTML template upload.html with the data in the context variable
+    return render(request, 'upload.html', context=context)

@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # macrosheds applications
+    'upload',
+    # 'upload.apps.UploadConfig',
     'landing.apps.LandingConfig',
     'download.apps.DownloadConfig',
-    'upload.apps.UploadConfig',
     'user.apps.UserConfig',
     'viz.apps.VizConfig',
 ]
