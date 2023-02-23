@@ -35,12 +35,14 @@ def upload_product(request):
     context = {}
 
     # create object of form
-    form = ProductForm(request.POST or None)
+    form = ProductForm(request.POST)
 
     # check if form data is valid
     if form.is_valid():
         # save the form data to model
-        form.save()
+        prod_instance = form.save(commit = False)
+        prod_instance.prod_select = prod_instance.prod_select
+        prod_instance.save()
 
     context['form'] = form
 
