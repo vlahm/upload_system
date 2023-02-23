@@ -45,4 +45,4 @@ def upload_product(request):
     context['form'] = form
 
     # Render the HTML template upload.html with the data in the context variable
-    return render(request, 'upload.html', context=context)
+    return render(request, 'name.html', {'form': form})
