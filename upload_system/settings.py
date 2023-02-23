@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 # macrosheds imports
 from decouple import config # for secret keeping
 
@@ -40,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # macrosheds applications
-    'landing.apps.LandingConfig', # This object was created for us in /landing/apps.py
+    'landing.apps.LandingConfig',
+    'download.apps.DownloadConfig',
+    'upload.apps.UploadConfig',
+    'user.apps.UserConfig',
+    'viz.apps.VizConfig',
 ]
 
 MIDDLEWARE = [
@@ -55,10 +61,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'upload_system.urls'
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
