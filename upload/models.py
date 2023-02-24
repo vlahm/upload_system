@@ -9,7 +9,7 @@ class Product(models.Model):
     ]
 
     prod_id = models.BigAutoField(primary_key=True)
-    prod_select = models.BooleanField()
+    # prod_select = models.BooleanField()
     prod_name = models.CharField(max_length=50,
                                 choices = DATA_PRODUCTS)
     def prod_status(self):
