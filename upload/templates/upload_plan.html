@@ -20,6 +20,11 @@
 <div class="container">
   <h2>MacroSheds Minimum Domain Data Requirements</h2>
   <p>does your dataset have at least</p>
+  <form action="/upload/plan" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -28,28 +33,27 @@
       </tr>
     </thead>
     <tbody>
+      {% for x in context %}
       <tr>
         <td class = 'msprod'>
-          <div class="msprod checkbox">
-            <label>
-              <input type="checkbox" value="">
-            </label>
-          </div>
+          <p>"bloop"</p>
+          {{x.prod_name }}
         </td>
-        <td>stream chemistry</td>
       </tr>
-      <tr>
-        <td><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td>
-        <td>stream discharge</td>
-      </tr>
-      <tr>
-        <td><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td>
-        <td>precipitation chemistry</td>
-      </tr>
-      <tr>
-        <td><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td>
-        <td>precipitation volume</td>
-      </tr>
+      {% endfor %}
+
+  <!--     <tr> -->
+  <!--       <td><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td> -->
+  <!--       <td>stream discharge</td> -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!--       <td><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td> -->
+  <!--       <td>precipitation chemistry</td> -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!--       <td><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td> -->
+  <!--       <td>precipitation volume</td> -->
+  <!--     </tr> -->
     </tbody>
   </table>
 </div>
