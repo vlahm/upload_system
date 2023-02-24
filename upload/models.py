@@ -2,10 +2,10 @@ from django.db import models
 
 class Product(models.Model):
     DATA_PRODUCTS = [
-        ('sc', 'stream chemistry'),
-        ('sd', 'stream discharge'),
-        ('pc', 'precipitation chemistry'),
-        ('pv', 'precipitation volume'),
+        ('stream chemistry', 'stream chemistry'),
+        ('sstream discharge', 'stream discharge'),
+        ('precipitation chemistry', 'precipitation chemistry'),
+        ('precipitation volume', 'precipitation volume'),
     ]
 
     prod_id = models.BigAutoField(primary_key=True)
