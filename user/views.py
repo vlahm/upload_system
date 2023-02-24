@@ -4,7 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .forms import UserRegistrationForm
 
-
+# original "user" landing page
 def user(request):
     #return HttpResponse("Hello, world. You're at MacroSheds: user.")
     return render(request, 'user.html')

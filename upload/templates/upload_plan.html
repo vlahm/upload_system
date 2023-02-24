@@ -3,45 +3,52 @@
 <h1> what data do you plan to upload to MacroSheds?</h1>
 <br>
 
+
+
 <div class="panel-group">
   <div class="panel panel-success">
     <div class="panel-heading">
-      below, check each box for data products you plan to upload to MacroSheds
+      below, submit data products you plan to upload to MacroSheds
     </div>
 
     <div class="panel-body">
-      (hover tooltip for eligibility requirements by product)
+      <!-- (hover tooltip for eligibility requirements by product) -->
+  <form action="/upload/plan" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
     </div>
   </div>
 </div>
 
 <div class="container">
-  <h2>MacroSheds Minimum Domain Data Requirements</h2>
-  <p>does your dataset have at least</p>
+
+
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>upload</th>
-        <th>data product</th>
+        <!-- <th>upload</th> -->
+        <th>upload product</th>
       </tr>
     </thead>
     <tbody>
+      {% for x in products %}
       <tr>
-        <td class = 'msprod'><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td>
-        <td>stream chemistry</td>
+        <!-- <td > -->
+        <!--   <div class="msprod checkbox"> -->
+        <!--     <label> -->
+        <!--       <input type="checkbox" value="" checked> -->
+        <!--     </label> -->
+        <!--   </div> -->
+        <!-- </td> -->
+        <td class = 'msprod'>
+            {{x.prod_name}}
+          <!-- <div class="msprod checkbox"> -->
+          <!-- </div> -->
+        </td>
       </tr>
-      <tr>
-        <td><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td>
-        <td>stream discharge</td>
-      </tr>
-      <tr>
-        <td><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td>
-        <td>precipitation chemistry</td>
-      </tr>
-      <tr>
-        <td><div class="msprod checkbox"><label><input type="checkbox" value=""></label></div></td>
-        <td>precipitation volume</td>
-      </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>
