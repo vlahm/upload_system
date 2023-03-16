@@ -132,3 +132,5 @@ dmypy.json
 notes.txt
 # MacroSheds
 *.pyc
+
+test_files/

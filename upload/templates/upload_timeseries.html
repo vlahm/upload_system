@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1> Select time-series data files to upload </h1>
+<br>
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="panel-group">
+      <div class="panel panel-success">
+        <div class="panel-body">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="file" id="stream_chem" name="filename">
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-group">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <p>
+            <button type="submit" class="btn btn-success btn-lg" >continue</button>
+          </p>
+        </div>
+      </div>
+    </div>
+</form>
+
+{% endblock %}
