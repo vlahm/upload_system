@@ -4,19 +4,23 @@
 <h1> Select time-series data files to upload </h1>
 <br>
 
-<form method="post" enctype="multipart/form-data">
+<!--<form action="/upload/timeseries/" method="post" enctype="multipart/form-data">-->
 
     <div class="panel-group">
       <div class="panel panel-success">
         <div class="panel-body">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <input type="file" id="stream_chem" name="filename">
+          <form action="/upload/timeseries" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <input type="submit" value="Submit">
+          </form>
+          <!--<input type="file" id="stream_chem" name="filename">-->
         </div>
       </div>
     </div>
 
-    <div class="panel-group">
+
+    <!--<div class="panel-group">
       <div class="panel panel-success">
         <div class="panel-heading">
           <p>
@@ -24,7 +28,7 @@
           </p>
         </div>
       </div>
-    </div>
-</form>
+    </div>-->
+<!--</form>-->
 
 {% endblock %}

@@ -58,20 +58,17 @@ def upload_sitedata(request):
     return render(request, 'upload_sitedata.html', context=context)
 
 def upload_timeseries(request):
-    context = {}
-    return render(request, 'upload_timeseries.html', context=context)
 
-def fileup_ts(request):
-    print('a')
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
-            fn = request.files['file'].name
+            fn = form.files['file'].name
             handle_uploaded_file(request.FILES['file'], 'data/uploads_ts/' + fn)
-            return HttpResponseRedirect('upload_matchcolumns.html')
+            #return HttpResponseRedirect('upload_matchcolumns.html')
+            return render(request, 'upload_matchcolumns.html', context = {})
     else:
         form = UploadFileForm()
-    return render(request, 'upload_timeseries.html', {'form': form})
+    return render(request, 'upload_timeseries.html', context={'form': form})
 
 def upload_matchcolumns(request):
     context = {}
