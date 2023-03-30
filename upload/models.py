@@ -3,7 +3,7 @@ from django.db import models
 class Product(models.Model):
     DATA_PRODUCTS = [
         ('stream chemistry', 'stream chemistry'),
-        ('sstream discharge', 'stream discharge'),
+        ('stream discharge', 'stream discharge'),
         ('precipitation chemistry', 'precipitation chemistry'),
         ('precipitation volume', 'precipitation volume'),
     ]
