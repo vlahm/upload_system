@@ -1,0 +1,248 @@
+exact match: Ca
+exact match: Cl
+exact match: Ecoli
+exact match: HCO3
+exact match: K
+exact match: Mg
+exact match: NO3
+exact match: Na
+exact match: PO4
+exact match: SO4
+exact match: TN
+exact match: TP
+exact match: pH
+binary search algorithm found exact matches for  32.5 of column names
+exact match (synonym): Turbidity
+exact match (synonym): temperature
+exact match (synonym): time
+binary search algorithm found exact matches for  40.0 of column names
+producing fuzzy matches 1,7-Dimethylxanthine
+producing fuzzy matches Acetaminophen
+producing fuzzy matches Amphetamine
+producing fuzzy matches Caffeine
+producing fuzzy matches Carbamazepine
+producing fuzzy matches Cimetidine
+producing fuzzy matches Cotinine
+producing fuzzy matches Date
+producing fuzzy matches Diphenhydramine
+producing fuzzy matches Julian_Date
+producing fuzzy matches MDMA
+producing fuzzy matches Methamphetamine
+producing fuzzy matches Morphine
+producing fuzzy matches Site
+producing fuzzy matches Sulfadimethoxine
+producing fuzzy matches Sulfamethoxazole
+producing fuzzy matches Thiabendazole
+producing fuzzy matches Year
+producing fuzzy matches clarity
+producing fuzzy matches conductivity
+producing fuzzy matches d15N-NO3
+producing fuzzy matches d18O-NO3
+producing fuzzy matches dox
+producing fuzzy matches stage
+
+ Ca :
+   Ca
+
+ Cl :
+   Cl
+
+ Ecoli :
+   Ecoli
+
+ HCO3 :
+   HCO3
+
+ K :
+   K
+
+ Mg :
+   Mg
+
+ NO3 :
+   NO3
+
+ Na :
+   Na
+
+ PO4 :
+   PO4
+
+ SO4 :
+   SO4
+
+ TN :
+   TN
+
+ TP :
+   TP
+
+ pH :
+   pH
+
+ Turbidity :
+   turbid
+
+ temperature :
+   temp
+
+ time :
+   datetime_component
+
+ 1,7-Dimethylxanthine :
+   [('methane', 54)]
+
+ Acetaminophen :
+   [('datetime_component', 52), ('datetime_component', 52), ('datetime_component', 52), ('datetime_component', 52), ('datetime_component', 52), ('datetime_component', 52), ('datetime_component', 52), ('datetime_component', 52)]
+
+ Amphetamine :
+   [('methane', 67), ('methane-c', 60), ('pheophytin', 57), ('datetime', 53), ('datetime', 53)]
+
+ Caffeine :
+   [('caesium', 53)]
+
+ Carbamazepine :
+   [('carbonate', 55)]
+
+ Cimetidine :
+   [('iodine', 62), ('methane', 59), ('methane-c', 53)]
+
+ Cotinine :
+   [('iodine', 57), ('tin', 55), ('tin', 55)]
+
+ Date :
+   [('date', 100), ('datetime', 67), ('datetime', 67), ('do_sat', 60), ('day', 57), ('nitrate', 55), ('sulfate', 55)]
+
+ Diphenhydramine :
+   [('pheophytin', 56)]
+
+ Julian_Date :
+   [('sulfate', 56), ('bicarbonate', 55), ('silicate', 53), ('date', 53)]
+
+ MDMA :
+   [('day', 57), ('ammonia', 55)]
+
+ Methamphetamine :
+   [('methane', 64), ('methane-c', 58), ('epilithic pheophytin', 51)]
+
+ Morphine :
+   [('fluorine', 62), ('iodine', 57), ('minute', 57), ('pheophytin', 56), ('methane', 53)]
+
+ Site :
+   [('site', 100), ('silicate', 67), ('site name', 62), ('site_code', 62), ('site_code', 62), ('site_code', 62), ('site_code', 62), ('site_code', 62), ('site_code', 62), ('site_code', 62), ('site_code', 62), ('site_code', 62), ('silver', 60), ('minute', 60), ('nitrate', 55), ('nitrite', 55), ('sulfate', 55), ('silicate-si', 53)]
+
+ Sulfadimethoxine :
+   [('sulfate', 61), ('sulfate-s', 56), ('methane', 52)]
+
+ Sulfamethoxazole :
+   [('sulfate', 61), ('sulfate-s', 56), ('methane', 52)]
+
+ Thiabendazole :
+   []
+
+ Year :
+   [('year', 100), ('par', 57)]
+
+ clarity :
+   [('alkalinity', 59), ('acidity', 57), ('acidity', 57), ('chla', 55), ('chloride', 53), ('salinity', 53), ('salinity', 53)]
+
+ conductivity :
+   [('acidity', 53), ('acidity', 53)]
+
+ d15N-NO3 :
+   [('no3', 60), ('d13c', 55), ('d18o', 55), ('no3_d15n', 53)]
+
+ d18O-NO3 :
+   [('d18o', 73), ('don', 60), ('no3', 60), ('d13c', 55), ('no3_d18o', 53)]
+
+ dox :
+   [('doc', 67), ('don', 67), ('dop', 67), ('fdom', 57), ('d18o', 57)]
+
+ stage :
+   [('site', 67), ('gauge', 60), ('discharge', 57), ('site name', 57), ('discharge', 57), ('discharge', 57), ('discharge', 57), ('status', 55)]
+exact match: discharge
+exact match: acidity
+binary search algorithm found exact matches for  9.523809523809524 of column names
+exact match (synonym): watershed
+exact match (synonym): station_id
+exact match (synonym): date
+exact match (synonym): ph
+exact match (synonym): streamflow
+exact match (synonym): comment
+binary search algorithm found exact matches for  38.095238095238095 of column names
+producing fuzzy matches timeEST
+producing fuzzy matches phaeopig
+producing fuzzy matches chlorophyll-A
+producing fuzzy matches escherria. coli - sample
+producing fuzzy matches tempC_deg
+producing fuzzy matches precipitation_mm
+producing fuzzy matches dateCollected
+producing fuzzy matches dateStart
+producing fuzzy matches conductance
+producing fuzzy matches Nitrate_N
+producing fuzzy matches Tot_Kjedhal_N
+producing fuzzy matches Unfilt_TK_Nitrogen
+producing fuzzy matches NH4_NO3_N
+
+ discharge :
+   discharge
+
+ acidity :
+   acidity
+
+ watershed :
+   site_code
+
+ station_id :
+   site_code
+
+ date :
+   datetime_component
+
+ ph :
+   pH
+
+ streamflow :
+   discharge
+
+ comment :
+   quality/status
+
+ timeEST :
+   [('time', 73), ('datetime', 53), ('datetime', 53)]
+
+ phaeopig :
+   [('pheopig', 93), ('e_pheopig', 82), ('s_pheopig', 82), ('pheopigment', 74), ('pheophytin', 67), ('pheophy', 67), ('e_pheophy', 59), ('s_pheophy', 59), ('phosphate-p', 53)]
+
+ chlorophyll-A :
+   [('chlorophyll-a', 96), ('total chlorophyll', 76), ('sestonic chlorophyll-a', 71), ('epilithic chlorophyll-a', 69), ('sestonic total chlorophyll', 58), ('epilithic total chlorophyll', 56), ('pheophy', 53)]
+
+ escherria. coli - sample :
+   [('escherichia coli', 83), ('ecoli', 56)]
+
+ tempC_deg :
+   [('temp', 62), ('temp', 62), ('site_code', 56), ('site_code', 56), ('site_code', 56), ('site_code', 56), ('site_code', 56), ('site_code', 56), ('site_code', 56), ('site_code', 56), ('site_code', 56)]
+
+ precipitation_mm :
+   [('precipitation', 90), ('customprecipitation', 74), ('precipitation at gauge', 68), ('station_id', 54), ('station', 52)]
+
+ dateCollected :
+   [('date', 80), ('datetime', 71), ('datetime', 71), ('watershed', 67)]
+
+ dateStart :
+   [('date', 62), ('datetime', 59), ('datetime', 59), ('status', 53), ('do_sat', 53), ('quality/status', 52), ('quality/status', 52), ('quality/status', 52), ('quality/status', 52), ('quality/status', 52), ('quality/status', 52), ('quality/status', 52), ('quality/status', 52), ('quality/status', 52)]
+
+ conductance :
+   [('specific conductance', 71), ('theoretical conductance', 65), ('ionbalance', 57), ('ion balance', 55), ('cationcharge', 52)]
+
+ Nitrate_N :
+   [('nitrate-n', 89), ('nitrate', 88), ('nitrite-n', 78), ('nitrite', 75), ('nitrate and nitrite', 57), ('total nitrogen', 52)]
+
+ Tot_Kjedhal_N :
+   [('total kjeldahl nitrogen', 56)]
+
+ Unfilt_TK_Nitrogen :
+   [('unfiltered total nitrogen', 70), ('unfilt. total kjeldahl nitrogen', 65), ('total nitrogen', 62), ('nitrate delta 15 nitrogen', 56), ('total kjeldahl nitrogen', 54), ('benthic particulate nitrogen', 52), ('nitrite-n', 52)]
+
+ NH4_NO3_N :
+   [('nh4_nh3_n', 89), ('nh3_n', 71), ('nh4_n', 71), ('no3_n', 71), ('nh3_nh4_n', 67), ('no3_no2_n', 67), ('nh3_nh4', 62), ('no3_no2', 62), ('no3_d15n', 59), ('no2_n', 57)]
