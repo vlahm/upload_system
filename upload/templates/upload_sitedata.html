@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1> Enter site data </h1>
+<br>
+
+<div class="panel-group">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+        Enter data into the table, or upload a file using the button below.
+    </div>
+
+    <div class="panel-body">
+        [handsontable here]
+    </div>
+    <div class="panel-body">
+        [browse button here]
+    </div>
+  </div>
+</div>
+
+<div class="panel-group">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+        <p>
+            <span>After double-checking your inputs,</span>
+            <span>
+                <button type="button" class="btn btn-success btn-lg" ><a href="{% url 'upload_timeseries' %}">continue</a></button>
+            </span>
+        </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

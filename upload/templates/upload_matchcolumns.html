@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1> Match your column names to MacroSheds variables </h1>
+<p><strong>We've tried to match some column names below, but please double check.</strong>>/p>
+<p>Leave blank any column names that don't have a match. You may <a href="mailto:mail@macrosheds.org">email us</a> to request the addition of new variable names.</p>
+<br>
+
+<div class="panel-group">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+        <p>
+            <span>After confirming all inputs: </span>
+            <span>
+                <button type="button" class="btn btn-success btn-lg" ><a href="{% url 'upload_timeseries' %}">continue</a></button>
+            </span>
+        </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
