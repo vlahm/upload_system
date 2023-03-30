@@ -43,6 +43,7 @@ def upload_plan(request):
     if form.is_valid():
         # save the form data to model
         prod_instance = form.save(commit = False)
+        prod_instance.user = request.user
         prod_instance.save()
 
     context['form'] = form

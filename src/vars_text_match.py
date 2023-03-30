@@ -110,7 +110,6 @@ original_stdout = sys.stdout # Save a reference to the original standard output
 
 with open('filename.txt', 'w') as f:
     sys.stdout = f
-
     test_cases = [bmore_cols, dummy_cols]
 
     for i in range(len(test_cases)):
