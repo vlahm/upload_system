@@ -19,7 +19,13 @@
     </div>
 
     <div class="panel-body">
-      <button type="button" class="btn btn-success btn-lg" ><a href="{% url 'upload_requirements' %}">upload</a></button>
+      {% if user_active %}
+          <button type="button" class="btn btn-success btn-lg" ><a href="{% url 'upload_requirements' %}">upload</a></button>
+      {% else %}
+          <p>please <a href="/login">log in</a> to use the upload feature!</p>
+          <p>or <a href="/register">sign up</a> if you don't have an account yet</p>
+          <button type="button" class="btn btn-success btn-lg" disabled>upload</button>
+      {% endif %}
     </div>
   </div>
 </div>
