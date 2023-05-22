@@ -8,9 +8,9 @@ from upload_system.helpers import handle_uploaded_file
 # original "upload" landing page
 def upload(request):
     """View function for home page of site."""
-    context = {
-        'macrosheds': 'is working on making an upload app'
-    }
+    context = {}
+    context['user_active'] = request.user.is_authenticated
+
     # Render the HTML template upload.html with the data in the context variable
     return render(request, 'upload.html', context=context)
 
