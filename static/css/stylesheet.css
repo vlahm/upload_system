@@ -10,3 +10,22 @@
     padding: 0px;
     margin: 0px;
 }
+
+.sidebar {
+	width: 200px;
+	height: 100%;
+	background-color: white;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+a.custom-disabled {
+  color: gray;
+  pointer-events: none;
+}
+
+a.sb-link {
+  font-size: 1.3em;
+  margin-bottom: 50px;
+}

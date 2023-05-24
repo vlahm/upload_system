@@ -35,9 +35,31 @@
   <!--/ stream.macrosheds navigation bar -->
 
   <div class = "container">
-      <div class = "jumbotron">
-      {% block content %}{% endblock %}
+    <div class="row">
+
+      {% load custom_filters %}
+      {% if request.path|regex_search:'/upload/[a-zA-Z0-9_]+' %}
+      
+        <div class="col-lg-2">
+          {% block sidebar %}
+            {% include 'sidebar.html' %}
+          {% endblock %}
+        </div>
+        <div class="col-lg-10">
+          <div class = "jumbotron">
+      
+      {% else %}  
+      
+        <div class="col-lg-12">
+          <div class = "jumbotron">
+      
+      {% endif %}
+      
+          {% block content %}
+          {% endblock %}
+        </div>
       </div>
+    </div>
   </div>
 </body>
 </html>

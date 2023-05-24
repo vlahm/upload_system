@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'viz.apps.VizConfig',
     'crispy_forms',
+    #'formtools',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
