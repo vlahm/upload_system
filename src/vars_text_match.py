@@ -3,6 +3,7 @@
 import pandas as pd
 import sys
 import json
+import re
 from fuzzywuzzy import fuzz, process
 
 # Helpers
@@ -191,6 +192,11 @@ def ms_raw_column_reader(filepath,
             unmatched.remove(col)
         else:
             print('-- warning: skipping', col, ', contains less than three characters')
+
+    # fill matchless with parallell structure info
+    for match in matches.items():
+        if len(match[1]) == 0:
+            matches[match[0]] = [('no match found', 0, '')]
 
     # Serializing json
     json_object = json.dumps(matches, indent=4)

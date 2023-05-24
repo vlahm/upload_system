@@ -64,9 +64,8 @@ def upload_timeseries(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             fn = form.files['file'].name
-            handle_uploaded_file(request.FILES['file'], 'data/uploads_ts/' + fn)
-            #return HttpResponseRedirect('upload_matchcolumns.html')
-            return render(request, 'upload_matchcolumns.html', context = {})
+            matches = handle_uploaded_file(request.FILES['file'], 'data/uploads_ts/' + fn)
+            return render(request, 'upload_matchcolumns.html', context = {'matches': matches})
     else:
         form = UploadFileForm()
     return render(request, 'upload_timeseries.html', context={'form': form})

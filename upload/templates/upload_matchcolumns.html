@@ -15,6 +15,28 @@
                 <button type="button" class="btn btn-success btn-lg" ><a href="{% url 'upload_timeseries' %}">continue</a></button>
             </span>
         </p>
+
+        <table class="table table-condensed">
+            <tr>
+                <th>User Column</th>
+                <th>Match</th>
+            </tr>
+
+            {% for match in matches.items %}
+                <tr>
+                    <!-- name of input column -->
+                    <td>{{ match.0 }}</td>
+                    <td>
+                        <select name="post_categories" class="filter-selectbox">
+                            {% for match_option in match.1 %}
+                                <option value="{{ match_option.0 }}"> {{ match_option.0 }} </option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+
+            {% endfor %}
+        </table>
     </div>
   </div>
 </div>
