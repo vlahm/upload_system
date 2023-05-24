@@ -16,7 +16,7 @@
             </span>
         </p>
 
-        <table class="table table-condensed">
+        <table class="table table-condensed" id = "tblUserCols">
             <tr>
                 <th>User Column</th>
                 <th>Match</th>
@@ -29,8 +29,9 @@
                     <td>
                         <select name="post_categories" class="filter-selectbox">
                             {% for match_option in match.1 %}
-                                <option value="{{ match_option.0 }}"> {{ match_option.0 }} </option>
+                                <option> {{ match_option.0 }} </option>
                             {% endfor %}
+                            <option> None </option>
                         </select>
                     </td>
                 </tr>
