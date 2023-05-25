@@ -16,28 +16,32 @@
             </span>
         </p>
 
-        <table class="table table-condensed" id = "tblUserCols">
-            <tr>
-                <th>User Column</th>
-                <th>Match</th>
-            </tr>
-
-            {% for match in matches.items %}
+        <form method="post" id="userCols" action="units" class='form-group'>
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+            <table class="table table-condensed" id = "tblUserCols">
                 <tr>
-                    <!-- name of input column -->
-                    <td>{{ match.0 }}</td>
-                    <td>
-                        <select name="post_categories" class="filter-selectbox">
-                            {% for match_option in match.1 %}
-                                <option> {{ match_option.0 }} </option>
-                            {% endfor %}
-                            <option> None </option>
-                        </select>
-                    </td>
+                    <th>User Column</th>
+                    <th>Match</th>
                 </tr>
 
-            {% endfor %}
-        </table>
+                {% for match in matches.items %}
+                    <tr>
+                        <!-- name of input column -->
+                        <td>{{ match.0 }}</td>
+                        <td>
+                            <select name="post_categories" class="filter-selectbox">
+                                {% for match_option in match.1 %}
+                                    <option value > {{ match_option.0 }} </option>
+                                {% endfor %}
+                                <option> None </option>
+                            </select>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+            </table>
+        </form>
     </div>
   </div>
 </div>

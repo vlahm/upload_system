@@ -9,5 +9,6 @@ urlpatterns = [
     path('sitedata', views.upload_sitedata, name='upload_sitedata'),
     path('timeseries', views.upload_timeseries, name='upload_timeseries'),
     path('matchcolumns', views.upload_matchcolumns, name='upload_matchcolumns'),
+    path('units', views.upload_units, name='upload_units'),
     # path('product', views.upload_product, name='upload_product'),
 ]

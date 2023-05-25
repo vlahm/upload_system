@@ -73,3 +73,13 @@ def upload_timeseries(request):
 def upload_matchcolumns(request):
     context = {}
     return render(request, 'upload_matchcolumns.html', context=context)
+
+def upload_units(request):
+    context = {}
+
+    if request.method == 'POST':
+        print(request.POST)
+    else:
+        print('wamp wamp')
+
+    return render(request, 'upload_units.html', context=context)
