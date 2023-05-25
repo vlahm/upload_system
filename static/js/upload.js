@@ -34,6 +34,7 @@ function userColsConvert() {
         userMatches[col] = selection
     }
 
+<<<<<<< HEAD
     // // Ajax Monstrosity
     // $.ajax({
     //     type: 'POST',
@@ -46,6 +47,20 @@ function userColsConvert() {
     //     error: function(error){
     //         console.log(error);
     // });
+=======
+    // Ajax Monstrosity
+    $.ajax({
+        type: 'POST',
+        url:'/_colToVar',
+        data: JSON.stringify(userMatches),
+        contentType: 'application/json;charset=UTF-8',
+
+        success: function() {
+            console.log("nailed it!");
+        error: function(error){
+            console.log(error);
+    });
+>>>>>>> 3096b5aad18cc9705fe5dc69fa9f214f05d42b24
 
     return JSON.stringify(userMatches);
 }
