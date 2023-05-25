@@ -28,13 +28,18 @@
                 {% for match in matches.items %}
                     <tr>
                         <!-- name of input column -->
-                        <td>{{ match.0 }}</td>
-                        <td>
-                            <select name="post_categories" class="filter-selectbox">
-                                {% for match_option in match.1 %}
-                                    <option value > {{ match_option.0 }} </option>
-                                {% endfor %}
+                        <td name = 'cols_input'> {{ match.0 }} </td>
+                        <td name= 'cols_matches'>
+                            <select name="post_categories" class="filter-selectbox" value = {{ match.0 }}>
+                                <optgroup label = 'suggested matches'>
+                                    {% for match_option in match.1 %}
+                                        <option name = {{ match.0 }} > {{ match_option.0 }} </option>
+                                    {% endfor %}
+                                </optgroup>
+                                <optgroup label = 'all options'>
+                                </optgroup>
                                 <option> None </option>
+
                             </select>
                         </td>
                     </tr>

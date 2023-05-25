@@ -34,18 +34,31 @@ function userColsConvert() {
         userMatches[col] = selection
     }
 
-    // Ajax Monstrosity
-    $.ajax({
-        type: 'POST',
-        url:'/_colToVar',
-        data: JSON.stringify(userMatches),
-        contentType: 'application/json;charset=UTF-8',
+    // // Ajax Monstrosity
+    // $.ajax({
+    //     type: 'POST',
+    //     url:'/_colToVar',
+    //     data: JSON.stringify(userMatches),
+    //     contentType: 'application/json;charset=UTF-8',
 
-        success: function() {
-            console.log("nailed it!");
-        error: function(error){
-            console.log(error);
-    });
+    //     success: function() {
+    //         console.log("nailed it!");
+    //     error: function(error){
+    //         console.log(error);
+    // });
 
     return JSON.stringify(userMatches);
 }
+
+// # inject input of scraped data
+$("#userCols").submit( function(eventObj) {
+    var selections = $('#userCols td[name=cols_matches] select');
+    for(cell in selections) {
+        var
+    }
+    $("<input />").attr("type", "hidden")
+        .attr("name", "something")
+        .attr("value", "something")
+        .appendTo("#userCols");
+    return true;
+});
