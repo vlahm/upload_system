@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1> Match your column names to MacroSheds variables </h1>
-<p><strong>We've tried to match some column names below, but please double check.</strong>>/p>
+<p><strong>We've tried to match some column names below, but please double check.</strong></p>
 <p>Leave blank any column names that don't have a match. You may <a href="mailto:mail@macrosheds.org">email us</a> to request the addition of new variable names.</p>
 <br>
 
@@ -15,6 +15,38 @@
                 <button type="button" class="btn btn-success btn-lg" ><a href="{% url 'upload_timeseries' %}">continue</a></button>
             </span>
         </p>
+
+        <form method="post" id="userCols" action="units" class='form-group'>
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+            <table class="table table-condensed" id = "tblUserCols">
+                <tr>
+                    <th>User Column</th>
+                    <th>Match</th>
+                </tr>
+
+                {% for match in matches.items %}
+                    <tr>
+                        <!-- name of input column -->
+                        <td name = 'cols_input'> {{ match.0 }} </td>
+                        <td name= 'cols_matches'>
+                            <select name="post_categories" class="filter-selectbox" value = {{ match.0 }}>
+                                <optgroup label = 'suggested matches'>
+                                    {% for match_option in match.1 %}
+                                        <option name = {{ match.0 }} > {{ match_option.0 }} </option>
+                                    {% endfor %}
+                                </optgroup>
+                                <optgroup label = 'all options'>
+                                </optgroup>
+                                <option> None </option>
+
+                            </select>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+            </table>
+        </form>
     </div>
   </div>
 </div>
