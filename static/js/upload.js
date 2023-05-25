@@ -1,23 +1,3 @@
-function Convert() {
-    var table = document.getElementById("tblUserCols");
-    var header = [];
-    var rows = [];
-
-    for (var i = 0; i < table.rows.length; i++) {
-        header.push(table.rows[i].cells[i].innerHTML);
-    }
-
-    for (var i = 1; i < table.rows.length; i++) {
-        var row = {};
-        for (var j = 0; j < table.rows[i].cells.length; j++) {
-            row[header[j]] = table.rows[i].cells[j].innerHTML;
-        }
-        rows.push(row);
-    }
-
-    alert(JSON.stringify(rows));
-}
-
 function userColsConvert() {
     var table = document.getElementById("tblUserCols");
     var userMatches = {};
@@ -34,31 +14,24 @@ function userColsConvert() {
         userMatches[col] = selection
     }
 
-    // // Ajax Monstrosity
-    // $.ajax({
-    //     type: 'POST',
-    //     url:'/_colToVar',
-    //     data: JSON.stringify(userMatches),
-    //     contentType: 'application/json;charset=UTF-8',
-
-    //     success: function() {
-    //         console.log("nailed it!");
-    //     error: function(error){
-    //         console.log(error);
-    // });
-
     return JSON.stringify(userMatches);
 }
 
 // # inject input of scraped data
-$("#userCols").submit( function(eventObj) {
-    var selections = $('#userCols td[name=cols_matches] select');
-    for(cell in selections) {
-        var
-    }
-    $("<input />").attr("type", "hidden")
-        .attr("name", "something")
-        .attr("value", "something")
-        .appendTo("#userCols");
-    return true;
-});
+window.onload = function() {
+    $("#userCols").submit( function(eventObj) {
+        var selections = $('#userCols td[name=cols_matches] select');
+        var inputs = $('#userCols td[name=cols_input]');
+
+        for (let i = 0; i < selections.length; i++) {
+
+            var selected_col = selections[i].value
+            var old_col = inputs[i].innerText
+
+            $("<input />").attr("type", "hidden")
+                .attr("name", old_col)
+                .attr("value", selected_col)
+                .appendTo("#userCols");
+        }
+    });
+};

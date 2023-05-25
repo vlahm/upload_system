@@ -76,10 +76,14 @@ def upload_matchcolumns(request):
 
 def upload_units(request):
     context = {}
+    selections = dict(request.POST.copy().lists())
+    del selections['csrfmiddlewaretoken']
+    del selections['post_categories']
 
     if request.method == 'POST':
         print(request.POST)
+        context['input_cols'] = selections
     else:
-        print('wamp wamp')
+        print('user column matches POST failed, please retry')
 
     return render(request, 'upload_units.html', context=context)
