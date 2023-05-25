@@ -29,3 +29,8 @@ a.sb-link {
   font-size: 1.3em;
   margin-bottom: 50px;
 }
+
+a.sb-link-focused {
+  font-weight: bold;
+}
+
