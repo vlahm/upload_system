@@ -64,9 +64,8 @@ def upload_timeseries(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             fn = form.files['file'].name
-            handle_uploaded_file(request.FILES['file'], 'data/uploads_ts/' + fn)
-            #return HttpResponseRedirect('upload_matchcolumns.html')
-            return render(request, 'upload_matchcolumns.html', context = {})
+            matches = handle_uploaded_file(request.FILES['file'], 'data/uploads_ts/' + fn)
+            return render(request, 'upload_matchcolumns.html', context = {'matches': matches})
     else:
         form = UploadFileForm()
     return render(request, 'upload_timeseries.html', context={'form': form})
@@ -74,3 +73,17 @@ def upload_timeseries(request):
 def upload_matchcolumns(request):
     context = {}
     return render(request, 'upload_matchcolumns.html', context=context)
+
+def upload_units(request):
+    context = {}
+    selections = dict(request.POST.copy().lists())
+    del selections['csrfmiddlewaretoken']
+    del selections['post_categories']
+
+    if request.method == 'POST':
+        print(request.POST)
+        context['input_cols'] = selections
+    else:
+        print('user column matches POST failed, please retry')
+
+    return render(request, 'upload_units.html', context=context)

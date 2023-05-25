@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<h1> Enter the units used for each parameter in your dataset </h1>
+<p>these will all be automatically converted to set MacroSheds units</p>
+<br>
+
+<div class="panel-group">
+
+<table class="table table-condensed" id = "tblUserCols">
+    <tr>
+        <th>User Column Name</th>
+        <th>MacroSheds Column Name</th>
+        <th> User Units </th>
+        <th> MacroSheds Units </th>
+    </tr>
+  {% for col in input_cols.items %}
+    <tr>
+        <td>{{col.0}} </td> <td> {{col.1.0}}</td> <td></td> <td></td>
+    </tr>
+  {% endfor %}
+</table>
+</div>
+
+{% endblock %}
