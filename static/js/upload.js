@@ -1,21 +1,21 @@
-function userColsConvert() {
-    var table = document.getElementById("tblUserCols");
-    var userMatches = {};
-
-    for (var i = 1; i < table.rows.length; i++) {
-        // key: user-input column name
-        col = table.rows[i].cells[0].innerHTML
-
-        // value: user-selected match
-        sel = table.rows[i].cells[1].children[0]
-        sel_index = sel.selectedIndex
-        selection = sel[sel_index].text
-
-        userMatches[col] = selection
-    }
-
-    return JSON.stringify(userMatches);
-}
+//function userColsConvert() {
+//    var table = document.getElementById("tblUserCols");
+//    var userMatches = {};
+//
+//    for (var i = 1; i < table.rows.length; i++) {
+//        // key: user-input column name
+//        col = table.rows[i].cells[0].innerHTML
+//
+//        // value: user-selected match
+//        sel = table.rows[i].cells[1].children[0]
+//        sel_index = sel.selectedIndex
+//        selection = sel[sel_index].text
+//
+//        userMatches[col] = selection
+//    }
+//
+//    return JSON.stringify(userMatches);
+//}
 
 // # inject input of scraped data
 window.onload = function() {
